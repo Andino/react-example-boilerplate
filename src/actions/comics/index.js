@@ -2,9 +2,9 @@ import {FETCH_COMICS_SUCCESFULL, FETCH_MORE_COMICS_SUCCESFULL, FETCH_COMICS_FAIL
 import {apiUrl, publicApiKey, hash, ts} from './../../constants';
 import axios from 'axios';
 
-export const fetchComics = () => {
+export const fetchComics = (filters = '') => {
     return (dispatch) => {
-        return axios.get(`${apiUrl}/comics?ts=${ts}&apikey=${publicApiKey}&hash=${hash}&limit=28`)
+        return axios.get(`${apiUrl}/comics?ts=${ts}&apikey=${publicApiKey}&hash=${hash}&limit=28&orderBy=issueNumber${filters}`)
             .then(response =>{
                 let {data: {data: {results} } } = response;
                 dispatch(fetchComicSuccess(results))
@@ -15,9 +15,9 @@ export const fetchComics = () => {
     }
 };
 
-export const fetchMoreComics = (comics) => {
+export const fetchMoreComics = (comics, filters = '') => {
     return (dispatch) => {
-        return axios.get(`${apiUrl}/comics?ts=${ts}&apikey=${publicApiKey}&hash=${hash}&limit=28&offset=${comics}`)
+        return axios.get(`${apiUrl}/comics?ts=${ts}&apikey=${publicApiKey}&hash=${hash}&limit=28&offset=${comics+1}&orderBy=issueNumber${filters}`)
         .then(response =>{
                 let {data: {data: {results} } } = response;
                 dispatch(fetchMoreComicSuccess(results))

@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import animationData from './assets/json/spinner.json'
 import Home from './views/home'
+import ComicDetail from './views/comics/detail'
 import Lottie from 'react-lottie';
 import Navbar from './components/navbar'
 import './App.css';
@@ -39,14 +40,17 @@ class App extends Component{
     const PrincipalComponent = () =>{
         if(this.state.isStopped){
           return (
-            <div className="h-full mt-20">
-              <Router>
-              <div className="h-full">
-                  <Route exact path="/" component={Home}></Route>
-                  <Route exact path="/2" component={this.render2}></Route>
+            
+            <Router>
+              <Navbar></Navbar>
+                <div className="h-full mt-20">
+                  <div className="h-full">
+                    <Route exact path="/" component={Home}></Route>
+                    <Route exact path="/comics/:id" component={ComicDetail}></Route>
+                    <Route exact path="/stories" component={Home}></Route>
+                  </div>
                 </div>
-              </Router>
-            </div>
+            </Router>
           );
         }
         else{
@@ -69,7 +73,6 @@ class App extends Component{
     return (
       
       <div className="h-screen">
-        <Navbar></Navbar>
         <PrincipalComponent></PrincipalComponent>
       </div>
     );
