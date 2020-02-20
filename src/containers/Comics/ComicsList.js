@@ -1,12 +1,13 @@
 import  React, { Component } from 'react';
 import {connect} from 'react-redux';
-import {fetchComics} from './../../actions/comics'
+import {fetchComics, fetchMoreComics} from './../../actions/comics'
 import animationData from './../../assets/json/spinner.json'
 import Lottie from 'react-lottie';
 import { bindActionCreators } from 'redux';
 import ComicsCard from './../../components/ComicsCards'
 import {Animated} from "react-animated-css";
 import "./../../css/animate.css";
+import debounce from "lodash.debounce";
 
 class comicsList extends Component {
     constructor(props) {
@@ -14,9 +15,21 @@ class comicsList extends Component {
         this.state = {
             isStopped: false,
             isPaused: false,
+            error: false,
+            hasMore: true,
+            isLoading: false,
         };
+        window.onscroll = debounce(() => {
+            const {fetchMorecomics, comics} = this.props;
+            const {error, hasMore, isLoading} = this.state;
+            if (
+              window.innerHeight + document.documentElement.scrollTop
+              > document.body.scrollHeight
+            ) {
+                fetchMorecomics(comics.length);
+            }
+          }, 100);
     }
-
     componentDidMount() {
         const {fetchComicsAction} = this.props;
         fetchComicsAction();
@@ -45,14 +58,19 @@ let Body = ({comics}) =>{
         )
     }
     return (
-        <div className="flex flex-wrap items-center w-full content-center justify-center">
-            {comics.map(comic => {
-                return(
-                    <Animated animationIn="fadeInUp" animationOut="fadeOut" isVisible={true}>
-                        <ComicsCard comics= {comic} key={comic.id}></ComicsCard>
-                    </Animated>
-                );
-            })}
+        <div className="flex flex-wrap justify-center">
+            <div className="w-1/2 m-5">
+                <h1 className="text-6xl">Comics: <small className="font-light text-gray-600 text-3xl">view all the comics created by the Marvel's industries</small></h1>
+            </div>
+            <div className="flex flex-wrap items-center w-full content-center justify-center">
+                {comics.map(comic => {
+                    return(
+                        <Animated animationIn="fadeInUp" animationOut="fadeOut" isVisible={true}>
+                            <ComicsCard comics= {comic} key={comic.id}></ComicsCard>
+                        </Animated>
+                    );
+                })}
+            </div>
         </div>
     )
 }
@@ -66,7 +84,8 @@ const defaultOptions = {
     }
 };
 const mapDispatchToProps = dispatch => bindActionCreators({
-    fetchComicsAction: fetchComics
+    fetchComicsAction: fetchComics,
+    fetchMorecomics: fetchMoreComics,
 }, dispatch)
  
 

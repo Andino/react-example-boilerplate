@@ -1,5 +1,6 @@
 import React from 'react';
 import './comiccards.css'
+import unknown from './../../assets/unknown.png'
 const ComicsCard = ({comics: {title, thumbnail}}) =>{
     return (
         <div className="flex flex-col content-center justify-center m-4 shadow-sm">

@@ -39,7 +39,7 @@ class App extends Component{
     const PrincipalComponent = () =>{
         if(this.state.isStopped){
           return (
-            <div className="h-full">
+            <div className="h-full mt-20">
               <Router>
               <div className="h-full">
                   <Route exact path="/" component={Home}></Route>
