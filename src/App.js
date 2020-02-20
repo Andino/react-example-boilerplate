@@ -14,14 +14,18 @@ class App extends Component{
         isStopped: false,
         isPaused: false,
     };
-  }
+    console.log("App");
 
-  render(){
+  }
+  componentDidMount(){
     setTimeout(()=> {
       this.setState({
         isStopped: true,
       });
     }, 1000);
+  }
+
+  render(){
   
     const defaultOptions = {
       loop: true,
@@ -35,9 +39,9 @@ class App extends Component{
     const PrincipalComponent = () =>{
         if(this.state.isStopped){
           return (
-            <div>
+            <div className="h-full">
               <Router>
-                <div>
+              <div className="h-full">
                   <Route exact path="/" component={Home}></Route>
                   <Route exact path="/2" component={this.render2}></Route>
                 </div>
