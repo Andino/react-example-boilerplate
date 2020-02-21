@@ -1,4 +1,4 @@
-export const apiUrl = "http://gateway.marvel.com/v1/public/";
+export const apiUrl = "http://gateway.marvel.com/v1/public";
 export const publicApiKey = "d99dccdb17081dcf415b0294e3e867dd";
 export const privateApiKey = "739ba70127eda8d2dcf5aec972a03774471254d3";
 // export const publicApiKey = "37030872f01918a115446bb9a1caaf20";

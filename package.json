@@ -10,6 +10,7 @@
     "bootstrap": "^4.4.1",
     "lodash.debounce": "^4.0.8",
     "next-offline": "^5.0.0",
+    "pure-react-carousel": "^1.25.2",
     "react": "^16.12.0",
     "react-animated-css": "^1.2.1",
     "react-bootstrap": "^1.0.0-beta.16",
@@ -20,6 +21,7 @@
     "react-scripts": "3.4.0",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
+    "serve": "^11.3.0",
     "superagent": "^5.2.2"
   },
   "scripts": {
