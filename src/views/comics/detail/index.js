@@ -152,14 +152,14 @@ const ComicDetail = () => {
                     </div>
                     <div className="xs:w-full sm:w-full md:w-full flex justify-end content-start ml-0 md:ml-16 lg:ml-16 xl:ml-16 z-10">
                       <div className="w-full">
-                        <p className="text-white text-4xl">{detail.title}</p>
+                        <p className="text-white text-4xl">{detail.title} </p>
                         <h1
-                          className="text-gray-500 cursor-pointer hover:text-red-500 transition duration-200 ease-in-out"
+                          className=" w-64 text-base animated infinite pulse slower text-red-500 cursor-pointer hover:text-red-300 transition duration-200 ease-in-out"
                           onClick={() => addBookmark(detail)}
                         >
                           {!isBookmark
-                            ? "Add to bookmark's"
-                            : "Remove from bookmark's"}
+                            ? "+ Add to bookmark's"
+                            : "- Remove from bookmark's"}
                         </h1>
                         <p className="text-white text-1xl">
                           {detail.description}
