@@ -162,15 +162,16 @@ const ComicDetail = () => {
                             : "Remove from bookmark's"}
                         </h1>
                         <p className="text-white text-1xl">
-                          {detail.description} {detail.images.length}
+                          {detail.description}
                         </p>
                         <CarouselProvider
-                          className="mt-5"
+                          className="mt-2"
                           naturalSlideWidth={10}
                           naturalSlideHeight={35}
                           totalSlides={detail.images.length - 1}
                           visibleSlides={2}
                         >
+                          <p className="text-white text-2xl">More images</p>
                           <Slider className="h-56">
                             {detail.images.map(image => {
                               return (
