@@ -59,7 +59,7 @@ let Body = ({ comics, isLoading }) => {
 };
 
 const ComicsSection = ({ comics, isLoading }) => {
-  if (!comics) {
+  if (comics == "") {
     return (
       <div className="flex flex-wrap items-center w-full content-center justify-center">
         <div className="h-full flex justify-center items-center content-center w-full text-3xl">
