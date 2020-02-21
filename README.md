@@ -1,8 +1,10 @@
 ## Indications
 
-- Run the yarn install command
-- If you want the run the serve:
-- Execute command yarn serve -s build ![test image size](src/assets/darth.ico?raw=true "Title")
+- Run the `yarn install` command
+- After that you can run with the `yarn start` command
+  or
+- If you want the run the serve `"Execute order 66"`:
+  - ###### `yarn serve -s build` and is ready to make the ligthouse test - [(Plugin used for make these tests test)](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
