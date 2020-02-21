@@ -2,7 +2,7 @@
 
 - Run the yarn install command
 - If you want the run the serve:
-- Execute command yarn serve -s build ![test image size](src/assets/darth.ico)
+- Execute command yarn serve -s build ![test image size](src/assets/darth.ico?raw=true "Title")
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
