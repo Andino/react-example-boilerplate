@@ -2,7 +2,7 @@
 
 - Run the yarn install command
 - If you want the run the serve:
-- Execute command yarn serve -s build ![Image description](http://icons.iconarchive.com/icons/sensibleworld/starwars/512/Darth-Vader-icon.png)
+- Execute command yarn serve -s build ![Image description](http://icons.iconarchive.com/icons/sensibleworld/starwars/512/Darth-Vader-icon.png){:height="10%" width="10%"}
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
